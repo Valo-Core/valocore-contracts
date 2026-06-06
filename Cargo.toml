@@ -1,0 +1,19 @@
+[package]
+name = "valocore-contracts"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+soroban-sdk = "21"
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+lto = true
+debug = false
+strip = true
+panic = "abort"
+codegen-units = 1
